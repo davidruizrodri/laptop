@@ -109,6 +109,7 @@ brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "caskroom/cask"
+tap "d12frosted/emacs-plus"
 
 # Unix
 brew "universal-ctags", args: ["HEAD"]
@@ -123,6 +124,9 @@ brew "zsh"
 brew "autojump"
 brew "htop"
 brew "unrar"
+brew "emacs-plus"
+
+linkapps "emacs-plus"
 
 # AWS
 brew "s3cmd"
@@ -169,6 +173,19 @@ gem update --system
 gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+
+install_spacemacs() {
+  fancy_echo "Installing Spacemacs ..."
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+}
+if [ -f "$HOME/.emacs.d" ]; then
+  fancy_echo "Backing Emacs previous configuration up ..."
+  mv ~/.emacs ~/.emacs.bak
+  mv ~/.emacs.d ~/.emacs.d.bak
+  install_spacemacs
+else
+  install_spacemacs
+fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
