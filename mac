@@ -112,19 +112,25 @@ tap "caskroom/cask"
 tap "d12frosted/emacs-plus"
 
 # Unix
-brew "universal-ctags", args: ["HEAD"]
+brew "ack"
+brew "autojump"
+brew "awscli"
+brew "emacs-plus"
 brew "git"
+brew "git-extras"
+brew "grep", args: ["with-default-names"]
+brew "htop"
+brew "nvim"
 brew "openssl"
 brew "reattach-to-user-namespace"
+brew "screen"
 brew "the_silver_searcher"
 brew "tmux"
-brew "vim"
-brew "nvim"
-brew "zsh"
-brew "autojump"
-brew "htop"
+brew "universal-ctags", args: ["HEAD"]
 brew "unrar"
-brew "emacs-plus"
+brew "vim"
+brew "wget"
+brew "zsh"
 
 linkapps "emacs-plus"
 
@@ -151,6 +157,17 @@ brew "elixir"
 # Databases
 brew "mysql", restart_service: :changed
 brew "redis", restart_service: :changed
+
+# Applications
+cask "docker"
+cask "firefox"
+cask "flux"
+cask "franz"
+cask "google-chrome"
+cask "iterm2"
+cask "libreoffice"
+cask "spotify"
+cask "sublime-text"
 EOF
 
 fancy_echo "Configuring Ruby ..."
