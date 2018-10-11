@@ -137,8 +137,9 @@ linkapps "emacs-plus"
 # AWS
 brew "s3cmd"
 
-# GitHub
+# Git and GitHub
 brew "hub"
+brew "git-extras"
 
 # Image manipulation
 brew "imagemagick"
