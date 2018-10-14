@@ -116,7 +116,7 @@ brew "ack"
 brew "autojump"
 brew "awscli"
 brew "emacs-plus"
-brew "git"
+brew "git", args: ["without-completions"]
 brew "git-extras"
 brew "grep", args: ["with-default-names"]
 brew "htop"
