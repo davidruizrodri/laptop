@@ -168,7 +168,7 @@ cask "google-chrome"
 cask "iterm2"
 cask "libreoffice"
 cask "spotify"
-cask "sublime-text"
+cask "visual-studio-code"
 EOF
 
 fancy_echo "Configuring Ruby ..."
