@@ -110,6 +110,7 @@ tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "caskroom/cask"
 tap "d12frosted/emacs-plus"
+tap "homebrew/cask-fonts"
 
 # Unix
 brew "ack"
@@ -169,6 +170,7 @@ cask "iterm2"
 cask "libreoffice"
 cask "spotify"
 cask "visual-studio-code"
+cask "font-fira-code"
 EOF
 
 fancy_echo "Configuring Ruby ..."
