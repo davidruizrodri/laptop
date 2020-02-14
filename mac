@@ -133,8 +133,6 @@ brew "vim"
 brew "wget"
 brew "zsh"
 
-linkapps "emacs-plus"
-
 # AWS
 brew "s3cmd"
 
@@ -154,7 +152,6 @@ brew "coreutils"
 brew "node"
 brew "rbenv"
 brew "ruby-build"
-brew "elixir"
 
 # Databases
 brew "mysql", restart_service: :changed
@@ -167,11 +164,13 @@ cask "flux"
 cask "franz"
 cask "google-chrome"
 cask "iterm2"
-cask "libreoffice"
 cask "spotify"
 cask "visual-studio-code"
 cask "font-fira-code"
 EOF
+
+fancy_echo "Linking Spacemacs as application ..."
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
 
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
