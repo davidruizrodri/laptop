@@ -68,7 +68,7 @@ update_shell() {
 
 case "$SHELL" in
   */zsh)
-    if [ "$(which zsh)" != '/usr/local/bin/zsh' ] ; then
+    if [ "$(command -v zsh)" != '/usr/local/bin/zsh' ] ; then
       update_shell
     fi
     ;;
@@ -169,9 +169,6 @@ cask "visual-studio-code"
 cask "font-fira-code"
 EOF
 
-fancy_echo "Linking Spacemacs as application ..."
-ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
-
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
   rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
@@ -195,19 +192,6 @@ bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "Installing Tmuxinator ..."
 gem_install_or_update 'tmuxinator'
-
-install_spacemacs() {
-  fancy_echo "Installing Spacemacs ..."
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-}
-if [ -f "$HOME/.emacs.d" ]; then
-  fancy_echo "Backing Emacs previous configuration up ..."
-  mv ~/.emacs ~/.emacs.bak
-  mv ~/.emacs.d ~/.emacs.d.bak
-  install_spacemacs
-else
-  install_spacemacs
-fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
