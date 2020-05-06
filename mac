@@ -167,6 +167,7 @@ cask "iterm2"
 cask "spotify"
 cask "visual-studio-code"
 cask "font-fira-code"
+cask "breaktimer"
 EOF
 
 fancy_echo "Configuring Ruby ..."
