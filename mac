@@ -4,7 +4,7 @@ fancy_echo() {
   local fmt="$1"; shift
 
   # shellcheck disable=SC2059
-  printf "\n$fmt\n" "$@"
+  printf "\\n$fmt\\n" "$@"
 }
 
 append_to_zshrc() {
@@ -19,9 +19,9 @@ append_to_zshrc() {
 
   if ! grep -Fqs "$text" "$zshrc"; then
     if [ "$skip_new_line" -eq 1 ]; then
-      printf "%s\n" "$text" >> "$zshrc"
+      printf "%s\\n" "$text" >> "$zshrc"
     else
-      printf "\n%s\n" "$text" >> "$zshrc"
+      printf "\\n%s\\n" "$text" >> "$zshrc"
     fi
   fi
 }
@@ -56,7 +56,7 @@ fi
 
 update_shell() {
   local shell_path;
-  shell_path="$(which zsh)"
+  shell_path="$(command -v zsh)"
 
   fancy_echo "Changing your shell to zsh ..."
   if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
@@ -109,7 +109,6 @@ brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "caskroom/cask"
-tap "d12frosted/emacs-plus"
 tap "homebrew/cask-fonts"
 
 # Unix
@@ -132,6 +131,7 @@ brew "unrar"
 brew "vim"
 brew "wget"
 brew "zsh"
+brew "zfz"
 
 # AWS
 brew "s3cmd"
