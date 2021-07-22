@@ -87,8 +87,8 @@ gem_install_or_update() {
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
-    curl -fsS \
-      'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+    /bin/bash -c \
+      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     append_to_zshrc '# recommended by brew doctor'
 
@@ -114,51 +114,41 @@ tap "homebrew/cask-fonts"
 # Unix
 brew "ack"
 brew "autojump"
-brew "awscli"
-brew "emacs-plus"
 brew "git", args: ["without-completions"]
 brew "git-extras"
 brew "grep", args: ["with-default-names"]
 brew "htop"
+brew "vim"
 brew "nvim"
 brew "openssl"
 brew "reattach-to-user-namespace"
-brew "screen"
 brew "the_silver_searcher"
 brew "tmux"
 brew "universal-ctags", args: ["HEAD"]
 brew "unrar"
-brew "vim"
 brew "wget"
 brew "zsh"
 brew "zfz"
 
 # AWS
 brew "s3cmd"
+brew "awscli"
 
 # Git and GitHub
-brew "hub"
-brew "git-extras"
+# brew "hub"
+# brew "gh"
 
 # Image manipulation
 brew "imagemagick"
 
-# Testing
-brew "qt@5.5" if MacOS::Xcode.installed?
-
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
 brew "coreutils"
-
-# Databases
-brew "mysql", restart_service: :changed
-brew "redis", restart_service: :changed
+brew "yarn"
 
 # Applications
 cask "docker"
-cask "firefox"
-cask "flux"
-cask "franz"
+cask "rambox"
 cask "google-chrome"
 cask "iterm2"
 cask "spotify"
@@ -188,6 +178,7 @@ add_or_update_asdf_plugin() {
 # shellcheck disable=SC1090
 source "$HOME/.asdf/asdf.sh"
 add_or_update_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+add_or_update_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
 
 install_asdf_language() {
   local language="$1"
@@ -204,9 +195,12 @@ fancy_echo "Installing latest Ruby ..."
 install_asdf_language "ruby"
 
 gem update --system
-gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+
+fancy_echo "Installing latest Node ..."
+bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
+install_asdf_language "nodejs"
 
 fancy_echo "Installing Tmuxinator ..."
 gem_install_or_update 'tmuxinator'
