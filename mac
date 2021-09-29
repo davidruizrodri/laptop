@@ -116,19 +116,14 @@ brew "ack"
 brew "autojump"
 brew "git", args: ["without-completions"]
 brew "git-extras"
-brew "grep", args: ["with-default-names"]
 brew "htop"
-brew "vim"
-brew "nvim"
 brew "openssl"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
 brew "tmux"
 brew "universal-ctags", args: ["HEAD"]
-brew "unrar"
 brew "wget"
 brew "zsh"
-brew "zfz"
 
 # AWS
 brew "s3cmd"
@@ -137,9 +132,6 @@ brew "awscli"
 # Git and GitHub
 # brew "hub"
 # brew "gh"
-
-# Image manipulation
-brew "imagemagick"
 
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
