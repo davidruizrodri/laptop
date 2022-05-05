@@ -11,16 +11,9 @@ Requirements
 ------------
 
 We support:
+* macOS Monterey (12.3) on Apple Silicon and Intel
 
-* macOS Mavericks (10.9)
-* macOS Yosemite (10.10)
-* macOS El Capitan (10.11)
-* macOS Sierra (10.12)
-* macOS High Sierra (10.13)
-* macOS Mojave (10.14)
-
-Older versions may work but aren't regularly tested.
-Bug reports for older versions are welcome.
+Older versions may work but aren't regularly tested. Bug reports for older versions are welcome.
 
 Install
 -------
@@ -76,43 +69,13 @@ AWS tools:
 
 [s3cmd]: https://github.com/s3tools/s3cmd
 
-
-Image tools:
-
-* [ImageMagick] for cropping and resizing images
-
-Testing tools:
-
-* [Qt 5] for headless JavaScript testing via [Capybara Webkit]
-
-[Qt 5]: http://qt-project.org/
-[Capybara Webkit]: https://github.com/thoughtbot/capybara-webkit
-
 Programming languages, package managers, and configuration:
 
-* [Bundler] for managing Ruby libraries
-* [Node.js] and [NPM], for running apps and installing JavaScript packages
-* [Rbenv] for Ruby version manager
+* [Asdf] for Ruby version manager
 * [Ruby] stable for writing general-purpose code
-* [Elixir] dynamic, functional language designed for building scalable and maintainable applications
 
-[Bundler]: http://bundler.io/
-[ImageMagick]: http://www.imagemagick.org/
-[Node.js]: http://nodejs.org/
-[NPM]: https://www.npmjs.org/
-[Rbenv]: https://github.com/rbenv/rbenv
+[Asdf]: https://github.com/asdf-vm/asdf
 [Ruby]: https://www.ruby-lang.org/en/
-[Elixir]: https://elixir-lang.org/
-
-Databases:
-
-* [MySQL] for storing relational data
-* [Redis] for storing key-value data
-
-[MySQL]: https://www.mysql.com/
-[Redis]: http://redis.io/
-
-It should take less than 15 minutes to install (depends on your machine).
 
 Customize in `~/.laptop.local`
 ------------------------------
