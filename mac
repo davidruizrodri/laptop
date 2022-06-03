@@ -113,6 +113,7 @@ brew "git"
 brew "git-extras"
 brew "github-markdown-toc"
 brew "htop"
+brew "jq"
 brew "openssl"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
@@ -132,6 +133,9 @@ brew "gh"
 # brew "libyaml" # should come after openssl
 # brew "coreutils"
 # brew "yarn"
+
+# Docker
+brew "hadolint"
 
 # Applications
 cask "breaktimer"
