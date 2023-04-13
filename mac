@@ -122,6 +122,7 @@ brew "tmux"
 brew "universal-ctags", args: ["HEAD"]
 brew "wget"
 brew "zsh"
+brew "bat"
 
 # AWS
 brew "s3cmd"
