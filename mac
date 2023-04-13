@@ -105,6 +105,7 @@ tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-drivers"
+tap "weaveworks/tap"
 
 # Unix
 brew "ack"
@@ -125,9 +126,16 @@ brew "zsh"
 # AWS
 brew "s3cmd"
 brew "awscli"
+brew "aws-iam-authenticator"
 
 # Git and GitHub
 brew "gh"
+
+# Kubernetes
+brew "kubernetes-cli"
+brew "kubectx"
+brew "weaveworks/tap/eksctl"
+brew "hidetatz/tap/kubecolor"
 
 # Programming language prerequisites and package managers
 # brew "libyaml" # should come after openssl
