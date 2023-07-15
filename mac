@@ -156,6 +156,7 @@ cask "rambox"
 cask "spotify"
 cask "visual-studio-code"
 cask "warp"
+cask "raycast"
 EOF
 
 fancy_echo "Configuring asdf version manager ..."
